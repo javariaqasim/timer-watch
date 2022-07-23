@@ -1,43 +1,65 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-       crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Timer</title>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
-<body>
-    <h1>Countdown Clock</h1>
-    <div id="clockdiv">
-      <div>
-        <span class="minutes"></span>
-        <div class="smalltext">Minutes</div>
-      </div>
-      <div>
-        <span class="seconds"></span>
-        <div class="smalltext">Seconds</div>
-      </div>
-    </div> 
 
-     <div class="row">
-      <div class="col-md-12">
-          <div class="fixed-bottom  text-center"> 
-              <button class="btn btn-success m-1" id="startBtn" onclick="start()">Start</button>
-              <button class="btn btn-warning m-1" id="pauseBtn" onclick="pause()">Pause</button>
-              <button class="btn btn-danger m-1" id="resetBtn" onclick="reset()">Reset</button>
-          </div>
-      </div>
+ <body>
 
-  
+     <h1 class="text-center mb-2">TIMER WATCH</h1> 
+    <div class="container">
+        <div class="row">
+            <div class="d-flex">
+                <div class="col-md-4">
+                    <div class="text-center p-5 bg-white m-2">
+                        <h1 class="h5">Hours</h1>
+                        <h1 id="displayHours" class="h5">0</h1>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-5 bg-white m-2">
+                        <h1 class="h5">Minutes</h1>
+                        <h1 id="displayMinutes" class="h5">0</h1>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="text-center p-5 bg-white m-2">
+                        <h1 class="h5">Seconds</h1>
+                        <h1 id="displaySeconds" class="h5">0</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="fixed-bottom text-center">
+                    <button id="startButton" onclick="startTime()" class="btn btn-success m-1">Start</button>
+                    <button id="pauseButton" onclick="pause()" class="btn btn-info m-1">Pause</button>
+                    <button id="resetButton" onclick="reset()" class="btn btn-danger m-1">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
-<script src="app.js"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script> 
+
 </body>
+<script src="app.js"></script>
+
 </html>

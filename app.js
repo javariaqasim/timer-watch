@@ -1,37 +1,65 @@
-function getTimeRemaining(endtime) {
-    var total = 
-Date.parse(endtime) - Date.parse(new Date());
-var seconds = Math.floor((total / 1000) % 60);
-  var minutes = Math.floor((total / 1000 / 60) % 60);
-  
-  return {
-    total,
-    minutes,
-    seconds
-  };
+var displayHours =document.getElementById("displayHours")
+var displayMinutes=document.getElementById("displayMinutes")
+var displaySeconds=document.getElementById("displaySeconds")
+
+
+
+var hours=prompt("Please enter hours");
+var minutes=prompt("Please enter minutes");
+var second=prompt("Please enter seconds");
+
+var startButton=document.getElementById("startButton")
+var pauseButton=document.getElementById("pauseButton")
+var resetButton=document.getElementById("resetButton")
+
+pauseButton.disabled=true
+resetButton.disabled=true
+
+var interval=0;
+
+function startTime(){
+    pauseButton.disabled=false
+    resetButton.disabled=false
+    startButton.disabled=true
+    interval=setInterval(function(){
+        second--
+        // console.log(second)
+        if(second==0){
+            minutes--
+            second=60
+        }
+        else if(minutes==0){
+            hours--
+            minutes=60
+        } 
+        else if(hours==0){
+            hours=60
+            second--
+        }
+        else if(minutes==0
+            ){alert("0")}
+            else if(hours==0
+                ){alert("0")}
+                else if(second==0
+                    ){alert("0")}
+        displaySeconds.innerHTML=second
+        displayMinutes.innerHTML=minutes
+        displayHours.innerHTML=hours
+    },1000)
+}    
+
+function pause(){
+    clearInterval(interval)
+    startButton.disabled=false
 }
-
-function initializeClock(id, endtime) {
-  var clock = document.getElementById(id);
-  var minutesSpan = clock.querySelector('.minutes');
-  var secondsSpan = clock.querySelector('.seconds');
-
-  function updateClock() {
-    var t = getTimeRemaining(endtime);
-
-    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-    if (t.total <= 0) {
-      clearInterval(timeinterval);
-    }
-  }
-
-  updateClock();
-  var timeinterval = setInterval(updateClock, 1000);
+function reset(){
+    clearInterval(interval)
+    second=prompt();
+    minutes=prompt();
+    hours=prompt();
+    displaySeconds.innerHTML=second
+    displayMinutes.innerHTML=minutes
+    displayHours.innerHTML=hours
+    pauseButton.disabled=true
+   
 }
-
-var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-initializeClock('clockdiv', deadline);
-
-

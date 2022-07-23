@@ -1,33 +1,8 @@
- body{
-    text-align: center;
-    background: red;
-    font-family: sans-serif;
+*{
+    box-sizing: border-box;
   }
-  
-  h1{
-    color: white;
-  }
-  
-  #clockdiv{
-    color: #fff;
-    display: inline-block;
-    font-weight: 100;
-    text-align: center;
-    font-size: 30px;
-  }
-  
-  #clockdiv > div{
-    padding: 10px;
-    border-radius: 3px;
-    background: black;
-    display: inline-block;
-  }
-  
-  #clockdiv div > span{
-    padding: 15px;
-    border-radius: 3px;
-    background: black;
-    display: inline-block;
-  }
+  body {
+    overflow-x: hidden;
+    background-color: brown!important;
 
-
+  } 
